@@ -2,7 +2,7 @@
 
 set -e
 
-DIRS=("deploy" "infra")
+DIRS=("deployment" "infra")
 
 for dir in ${DIRS[@]};
 do
