@@ -2,9 +2,9 @@
 
 set -e
 
-DIRS=(infra deploy)
+DIRS=("infra" "deploy")
 
-for dir in $DIRS;
+for dir in ${DIRS[@]};
 do
     echo "-> Applying '$dir' terraform"
     pushd $dir

@@ -2,9 +2,9 @@
 
 set -e
 
-DIRS=(deploy infra)
+DIRS=("deploy" "infra")
 
-for dir in $DIRS;
+for dir in ${DIRS[@]};
 do
     echo "-> Destroying '$dir' terraform"
     pushd $dir
