@@ -11,7 +11,7 @@ popd
 echo '-> Applying "deploy" terraform'
 pushd deploy
 terraform init
-terraform apply -auto-approve -var="lambda_image=$LAMBDA_IMAGE"
+terraform apply -auto-approve
 popd
 
 echo '-> Environment created'
