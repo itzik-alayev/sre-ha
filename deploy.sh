@@ -2,16 +2,15 @@
 
 set -e
 
-echo '-> Applying "infra" terraform'
-pushd infra
-terraform init
-terraform apply -auto-approve
-popd
+DIRS=(infra deploy)
 
-echo '-> Applying "deploy" terraform'
-pushd deploy
-terraform init
-terraform apply -auto-approve
-popd
+for dir in $DIRS;
+do
+    echo "-> Applying '$dir' terraform"
+    pushd $dir
+    terraform init
+    terraform apply -auto-approve
+    popd
+done
 
 echo '-> Environment created'
