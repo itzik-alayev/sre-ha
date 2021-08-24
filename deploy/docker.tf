@@ -9,7 +9,7 @@ resource "docker_image" "lambda_image" {
 resource "null_resource" "push_image" {
   provisioner "local-exec" {
     command = <<-EOT
-      aws ecr get-login-password --region ${var.region} | docker login --username AWS --password-stdin ${split(":", local.ecr_repository_url)[0]}
+      aws ecr get-login-password --region ${var.region} | docker login --username AWS --password-stdin ${split("/", local.ecr_repository_url)[0]}
       docker push ${local.ecr_repository_url}:latest
     EOT
   }
