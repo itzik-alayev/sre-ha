@@ -2,7 +2,7 @@
 A project consisting of 2 seperate Terraform deployments that provision resources on AWS.
 - [TF] infra: Provisions core infrastructure resources -  VPC, EKS Cluster, API Gateway, IAM Roles, ECR Repository.
 
-- [TF]deploy: Builds and pushes a Docker image that is used by a Lambda function which is also provisioned, creates a single endpoint in the API Gateway provisioned on `infra`.
+- [TF] deployment: Builds and pushes a Docker image that is used by a Lambda function which is also provisioned, creates a single endpoint in the API Gateway provisioned on `infra`.
 
 - [Go] lambda: Golang code built for Lambda & API Gateway which gets authentication information for a cluster, lists all Pods in `kube-system` namespace and returns an `APIGatewayProxyResponse` object so we can see valid reponse when accessing the API Gateway.
 
