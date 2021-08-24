@@ -8,10 +8,8 @@ RUN go mod download
 COPY handler.go .
 RUN GOOS=linux go build handler.go
 
-FROM gcr.io/distroless/base-debian10:nonroot
+FROM gcr.io/distroless/base-debian10
 
 COPY --from=builder /build/handler /
-
-USER nonroot:nonroot
 
 CMD ["/handler"]
