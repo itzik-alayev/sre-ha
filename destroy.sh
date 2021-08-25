@@ -4,7 +4,7 @@ set -e
 
 DIRS=("deployment" "infra")
 
-if [ -z "$1" ] and [ -d "$1" ]; then
+if ! [ -z "$1" ] && [ -d "$PWD/$1" ]; then
     DIRS=("$1")
 else
     echo "Specified Terraform deployment folder not found ($1), exiting..."
