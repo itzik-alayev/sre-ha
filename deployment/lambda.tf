@@ -12,7 +12,7 @@ resource "aws_lambda_function" "sre_ha_lambda" {
   }
 
   depends_on = [
-    null_resource.push_image
+    null_resource.build_push_image
   ]
 }
 
