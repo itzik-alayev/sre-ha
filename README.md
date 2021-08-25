@@ -37,5 +37,5 @@ To destroy a single Terraform deployment, you can simply run:
 
 --
 
-## AWS Architecture of the final deployment
+## AWS Architecture
 <img src="./docs/sre-ha-aws-architecture.svg">
