@@ -1,6 +1,6 @@
 # sre-ha
 A project consisting of 2 seperate Terraform deployments that provision resources on AWS.
-- [TF] **infra:** Provisions core infrastructure resources -  VPC, EKS Cluster, API Gateway, IAM Roles, ECR Repository.
+- [TF] **infra:** Provisions core infrastructure resources -  VPC, EKS Cluster with 2 nodegroups (sre-pool-main, sre-pool-sec), API Gateway, IAM Roles, ECR Repository.
 
 - [TF] **deployment:** Builds and pushes a Docker image that is used by a Lambda function which is also provisioned, creates a single endpoint in the API Gateway provisioned on `infra`.
 
