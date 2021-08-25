@@ -4,13 +4,20 @@ set -e
 
 DIRS=("infra" "deployment")
 
+if [ -z "$1" ] and [ -d "$1" ]; then
+    DIRS=("$1")
+else
+    echo "Specified Terraform deployment folder not found ($1), exiting..."
+    exit 1
+fi
+
 for dir in ${DIRS[@]};
 do
-    echo "-> Applying '$dir' terraform"
+    echo "-> Applying '$dir' Terraform"
     pushd $dir
     terraform init
     terraform apply -auto-approve
     popd
 done
 
-echo '-> Environment created'
+echo '-> Done deploying.'
