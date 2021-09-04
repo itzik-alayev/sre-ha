@@ -17,6 +17,7 @@ for dir in ${DIRS[@]};
 do
     echo "-> Destroying '$dir' Terraform"
     pushd $dir
+    terraform init
     terraform destroy -auto-approve
     popd
 done
